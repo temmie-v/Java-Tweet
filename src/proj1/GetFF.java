@@ -15,25 +15,27 @@ import twitter4j.TwitterFactory;
 
 
 public final class GetFF {
-
+    
 	public static void main(String[] args) throws TwitterException, IOException {
 
 		Calendar time = Calendar.getInstance();
         String path = "filepath/log.csv";
 		File file = new File(path);
-        PrintWriter pw = new PrintWriter(new BufferedWriter(new OutputStreamWriter
-        						(new FileOutputStream(file),"Shift-JIS")));
+        PrintWriter pw = new PrintWriter(new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file),"Shift-JIS")));
 
-        long myid = user_id;
+	    long myid = user_id;
+		
         pw.write(time.getTime() + ",user_name,@screen_name\n");
         pw.write("\n\nFollowers\n");
         pw.write("ID,@Screen Name,Name,Following,Followers,Protected,Tweets,Likes,CreatedAt,location,description\n");
         System.out.println("Listing followers.");
 		listFers(myid, pw);
+		
 		pw.write("\n\n\nFollowings\n");
         pw.write("ID,@Screen Name,Name,Following,Followers,Protected,Tweets,Likes,CreatedAt,location,description\n");
         System.out.println("\nListing followings.");
         listFings(myid, pw);
+		
         pw.close();
         System.out.println("\nSuccessfully finished listing. -> log.csv");
         System.exit(0);
@@ -100,8 +102,6 @@ public final class GetFF {
             System.exit(-1);
         }
     }
-
-
 
     private static String makeUnit(twitter4j.User u) {
     	String ret = "";
