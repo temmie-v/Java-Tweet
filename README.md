@@ -1,6 +1,6 @@
-twitter4j を利用して Twitter の API のリクエスト作成やレスポンス処理を行います。
+Twitter4J を利用して Twitter の API のリクエスト作成やレスポンス処理を行います。
 
-動作にはこのREADME.mdが置かれているのと同じ場所に`twitter4j.properties`を置き、その中に自身の取得しているAPI keyなどを以下のように記述する必要があります。
+**このリポジトリ内のプログラムだけでは動作しません。**動作にはこのREADME.mdが置かれているのと同じ場所に`twitter4j.properties`を置き、その中に自身の取得しているAPI keyなどを以下のように記述する必要があるほか、外部ソース`Twitter4J`と連携させる必要もあります。Eclipseのような統合開発環境で操作することを推奨します。
 
 ```bash
 debug=true
@@ -11,7 +11,7 @@ oauth.accessTokenSecret='your access token secret'
 loggerFactory=twitter4j.NullLoggerFactory
 ```
 
-また、twitter4jに対応させる際には次のサイトを参照してください：https://twitter4j.org/ja/
+Twitter4Jの利用の際は次のサイトを参照してください：https://twitter4j.org/ja/
 
 ---
 
